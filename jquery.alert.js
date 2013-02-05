@@ -21,10 +21,10 @@
 
     $.fn.jQueryAlert = function () {
 
-        var capa = '<div id="alert_message" class="alert alert-block alert-info modal hide fade in" role="dialog" data-keyboard="false" data-backdrop="static">';
+        var capa = '<div id="alertMessage" class="alert alert-block alert-info modal hide fade in" role="dialog" data-keyboard="false" data-backdrop="static">';
         capa += '<div class="modal-body"><p><strong id="message" style="font-size:15px">Alert</strong></p></div>';
         capa += '<div style="float: right;margin-left: 25px;">';
-        capa += '<button id="actionMesage" type="button" class="btn" data-dismiss="modal" aria-hidden="true">Aceptar</button></div></div>';
+        capa += '<button id="actionMessage" type="button" class="btn" data-dismiss="modal" aria-hidden="true">Aceptar</button></div></div>';
 
         switch ($().jQueryAlert.arguments.length) {
             case 0:
@@ -33,7 +33,7 @@
                 jQuery('body').append(capa);
                 jQuery('#message').empty();
                 jQuery('#message').append($().jQueryAlert.arguments[0]);
-                jQuery('#alert_message').modal('show');
+                jQuery('#alertMessage').modal('show');
                 break;
             case 2:
                 var titulo = $().jQueryAlert.arguments[0].length > 0 ? '<div class="alert alert-info">' + $().jQueryAlert.arguments[0] + '</div>' : '<div></div>';
@@ -41,16 +41,16 @@
                 jQuery('body').append(capa);
                 jQuery('#message').empty();
                 jQuery('#message').append(titulo + mesaje);
-                jQuery('#alert_message').modal('show');
+                jQuery('#alertMessage').modal('show');
                 break;
             case 3:
                 var titulo = $().jQueryAlert.arguments[0].length > 0 ? '<div class="alert alert-info">' + $().jQueryAlert.arguments[0] + '</div>' : '<div></div>';
                 var mesaje = '<div class="alert-block" style="padding-right:10px;padding-left:10px;">' + $().jQueryAlert.arguments[1] + '</div>';
                 jQuery('body').append(capa);
-                jQuery('#actionMesage').attr('onclick', $().jQueryAlert.arguments[2]);
+                jQuery('#actionMessage').attr('onclick', $().jQueryAlert.arguments[2]);
                 jQuery('#message').empty();
                 jQuery('#message').append(titulo + mesaje);
-                jQuery('#alert_message').modal('show');
+                jQuery('#alertMessage').modal('show');
                 break;
             default:
                 break;
